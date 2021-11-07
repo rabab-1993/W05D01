@@ -32,7 +32,7 @@ app.post("/list", (req, res) => {
 app.put("/updated", (req, res) => {
     let {isCompleted}= req.body
     tasks.forEach((ele) => {
-      ele.isCompleted = true;
+      ele.isCompleted = isCompleted;
     })
     res.status(200)
     res.json(tasks)
@@ -45,10 +45,6 @@ app.delete("/deleted", (req, res) => {
     res.json({id , taskName , isCompleted})
 
 })
-
-
-
-
 
 
 // Setup Server
